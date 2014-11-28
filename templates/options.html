@@ -1,0 +1,27 @@
+<ion-view title="Options" >
+    <ion-content ng-controller="OptionsCtrl">
+   	<div class="item item-divider">
+   		1. Copy your authentification token on this page, at the bottom of the "Client applications" tab :
+    </div>
+    <div class="item" onclick="window.open('https://build.phonegap.com/people/edit', '_system')">
+    	<a href="#/options">https://build.phonegap.com/people/edit</a><br/>
+    </div>
+   	<div class="item item-divider">
+   		2. Paste it in the field below, and click "Get my token"
+    </div>
+	<div class="item item-input-inset">
+		<label class="item-input-wrapper">
+		<input ng-model="AuthToken.authToken" type="text" placeholder="Paste token here">
+		</label>
+		<button class="button button-small" ng-click="AuthToken.refresh()">
+		Get my token
+		</button>
+	</div>
+	<div class="item item-divider">
+   		3. If your token is OK, it appears here :
+    </div>
+	<div class="item item-input-inset">
+		Your token is : {{$storage.appToken}}
+	</div>
+    </ion-content>
+</ion-view>
